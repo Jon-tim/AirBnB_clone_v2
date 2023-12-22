@@ -4,6 +4,7 @@ A script that starts a Flask web application:
     -   Web application must be listening on 0.0.0.0, port 5000
     -   Routes:
                 /: display “Hello HBNB!”
+                /hbnb: display “HBNB”
     -   Uses the option strict_slashes=False in the route definition
 """
 
@@ -16,6 +17,12 @@ app = Flask(__name__)
 def hello_hbnb():
     """function that returns Hello HBNB"""
     return "<p>Hello HBNB!</p>"
+
+
+@app.route("/hbnb", strict_slashes=False)
+def hbnb():
+    """function that defines another route"""
+    return "<p>HBNB</p>"
 
 
 if __name__ == '__main__':

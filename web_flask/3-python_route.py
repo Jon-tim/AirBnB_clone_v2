@@ -23,19 +23,20 @@ app = Flask(__name__)
 @app.route("/", strict_slashes=False)
 def hello_hbnb():
     """function that returns Hello HBNB"""
-    return "<p>Hello HBNB!</p>"
+    return "Hello HBNB!"
 
 
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
     """function that defines another route"""
-    return "<p>HBNB</p>"
+    return "HBNB"
 
 
 @app.route("/c/<text>", strict_slashes=False)
 def cisfun(text):
     """function that uses a variable to define route"""
     return f'C {text.replace("_", " ")}'
+
 
 @app.route("/python/<text>", strict_slashes=False)
 def python(text="is cool"):

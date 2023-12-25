@@ -40,7 +40,7 @@ def cisfun(text):
 
 @app.route("/python/<text>", strict_slashes=False)
 def python(text="is cool"):
-    """function that uses a variable to define route"""
+    """Display 'Python ' followed by the value of the text variable"""
     return f'Python {text.replace("_", " ")}'
 
 if __name__ == '__main__':

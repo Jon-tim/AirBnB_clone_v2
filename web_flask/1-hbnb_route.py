@@ -16,13 +16,13 @@ app = Flask(__name__)
 @app.route("/", strict_slashes=False)
 def hello_hbnb():
     """function that returns Hello HBNB"""
-    return "<p>Hello HBNB!</p>"
+    return "Hello HBNB!"
 
 
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
     """function that defines another route"""
-    return "<p>HBNB</p>"
+    return "HBNB"
 
 
 if __name__ == '__main__':

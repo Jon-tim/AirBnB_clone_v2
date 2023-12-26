@@ -47,7 +47,7 @@ def python(text="is cool"):
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
-def cisfun(n):
+def number(n):
     """function that display “n is a number” only if n is an integer"""
     return f'{n} is a number'
 

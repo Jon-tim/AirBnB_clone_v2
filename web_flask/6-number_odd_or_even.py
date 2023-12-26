@@ -73,7 +73,8 @@ def number_odd_or_even(n):
         display a HTML page only if n is an integer:
             H1 tag: “Number: n is even|odd” inside the tag BODY
     """
-    return render_template('6-number_odd_or_even.html', n=n)
+    state = 'even' if n % 2 == 0 else 'odd'
+    return render_template('6-number_odd_or_even.html', n=n, state=state)
 
 
 if __name__ == '__main__':

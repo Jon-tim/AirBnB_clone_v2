@@ -11,7 +11,7 @@ A script that starts a Flask web application:
                 /python/<text>: display “Python ”, followed by the value
                     of the text variable
                     (replace underscore _ symbols with a space )
-The default value of text is “is cool”
+                    The default value of text is “is cool”
     -   Uses the option strict_slashes=False in the route definition
 """
 

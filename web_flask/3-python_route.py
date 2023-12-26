@@ -37,10 +37,10 @@ def cisfun(text):
     """function that uses a variable to define route"""
     return f'C {text.replace("_", " ")}'
 
+
 @app.route('/python', strict_slashes=False)
-@app.route("/python/<text>", strict_slashes=False,
-           defaults={'text': 'is cool'})
-def python(text):
+@app.route("/python/<text>", strict_slashes=False)
+def python(text="is cool"):
     """Display 'Python ' followed by the value of the text variable"""
     return f'Python {text.replace("_", " ")}'
 

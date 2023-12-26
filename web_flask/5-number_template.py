@@ -13,7 +13,7 @@ A script that starts a Flask web application:
                     (replace underscore _ symbols with a space )
                     The default value of text is “is cool”
                 /number/<n>: display “n is a number” only if n is an integer
-                /number_template/<n>: display a HTML page only if n is an integer:
+                /number_template/<n>: display a HTML page only if n is an int:
                     H1 tag: “Number: n” inside the tag BODY
     -   Uses the option strict_slashes=False in the route definition
 """

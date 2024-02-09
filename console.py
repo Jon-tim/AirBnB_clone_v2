@@ -12,6 +12,26 @@ from models.amenity import Amenity
 from models.review import Review
 
 
+def list_to_dictionary(a_list, a_dictionary):
+    """a function that turns the elements in a list into
+    a key/value pair inside a dictionary"""
+    for element in a_list:
+        key, value = element.split("=")
+
+        if value.startswith('"'):
+            value = value.strip('"').replace('\\"', '"').replace('_', ' ')
+        else:
+            try:
+                if '.' in value:
+                    value = float(value)
+                else:
+                    value = int(value)
+            except ValueError:
+                continue
+        a_dictionary[key] = value
+    return a_dictionary
+
+
 class HBNBCommand(cmd.Cmd):
     """ Contains the functionality for the HBNB console"""
 
@@ -115,14 +135,16 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, args):
         """ Create an object of any class"""
-        if not args:
+        args = args.split(" ")
+        if not args[0]:
             print("** class name missing **")
             return
-        elif args not in HBNBCommand.classes:
+        elif args[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-        new_instance = HBNBCommand.classes[args]()
-        storage.save()
+        values = list_to_dictionary(args[1:], {})
+        new_instance = HBNBCommand.classes[args[0]](**values)
+        # storage.save()
         print(new_instance.id)
         storage.save()
 
